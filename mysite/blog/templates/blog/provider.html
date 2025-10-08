@@ -1,0 +1,76 @@
+{% extends 'blog/layout.html' %} 
+{% block head %}
+{{ block.super }}
+<style>
+
+div div h1{
+	font-weight: bold;
+}
+.btn.btn {
+  font-size: 18px;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 1s;
+  border: 1px solid purple;
+  background-color: #452c63;
+  color: white;
+}
+
+.btn.btn:hover {
+  background: purple;
+}
+.btn.btn-warning:hover {
+  background-color: green; 
+}
+
+.btn.btn-danger:hover {
+  background-color: red;
+}
+</style>
+{% endblock %}
+{% block body %}
+<div class="content">
+	<input   class="btn btn" type=button value="Retour" onClick="javascript:history.go(-1);">
+	
+	<div style="color: #fff" class="title text-center">
+		<h1>Liste des Fournisseurs</h1>
+		<div style="text-align: right;">
+		<a class="btn btn mt-2 mb-3" href="{% url 'new_provider' %}" role="button">Ajouter</a>
+	</div>
+</div>
+	<div class="display component text-center">
+		<!-- Provider -->
+		<table class="table provider">
+			<thead>
+				<tr>
+					<th style="color: #DDA0DD" scope="col">#</th>
+					<th style="color: #DDA0DD" scope="col">Nom</th>
+					<th style="color: #DDA0DD" scope="col">Téléphone</th>
+					<th style="color: #DDA0DD" scope="col">Adresse</th>
+					<th style="color: #DDA0DD" scope="col">Code postal</th>
+					<th style="color: #DDA0DD" scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for provider in listprovider %}
+				<tr class="{{provider.id}}">
+					<th style="color: #fff" scope="row">{{forloop.counter}}</th>
+					<td style="color: #fff">{{provider.name}}</td>
+					<td style="color: #fff">{{provider.phone}}</td>
+					<td style="color: #fff">{{provider.address}}</td>
+					<td style="color: #fff">{{provider.zip_code}}</td>
+					<td ><a href="{% url 'edit_provider' provider.id %}"
+						class="btn btn-warning">Modifier</a>
+						 <a 
+						href="{% url 'delete_provider' provider.id %}"
+						class="btn btn-danger">Supprimer</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock %}
