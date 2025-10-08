@@ -54,26 +54,6 @@ Elle a pour objectif d’aider les entreprises à gérer efficacement leurs **pr
 - Recherche rapide et filtrage par nom.
 
 ---
-
-## 🧠 Modélisation UML (extraits du rapport)
-
-### 📘 Diagramme de cas d’utilisation
-- Gestion des utilisateurs
-- Gestion des produits
-- Gestion des clients
-- Gestion des fournisseurs
-- Consultation du stock
-
-### 📗 Diagramme de séquence
-- Authentification
-- Gestion des ventes
-- Gestion des stocks
-
-### 📙 Diagramme de classes
-- Relations entre les entités : `Client`, `Produit`, `Stock`, `Fournisseur`, `Commande`, `HistCommande`.
-
----
-
 ## 💻 Installation et exécution
 
 ### 1️⃣ Cloner le dépôt
@@ -103,8 +83,6 @@ Clients / Fournisseurs : Gestion complète
 Caisse / Vente : Enregistrement et validation des commandes
 
 Historique des ventes : Suivi et consultation
-
-(Captures disponibles dans le dossier static/ ou dans le rapport PDF.)
 
 📈 Perspectives d’évolution
 Ajout de tableaux de bord analytiques (statistiques et graphiques).
